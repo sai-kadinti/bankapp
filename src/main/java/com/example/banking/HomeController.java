@@ -1,13 +1,17 @@
 package com.example.banking;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class HomeController {
 
     @GetMapping("/")
-    public String home() {
-        return "✅ Banking App is running! on 8081";
+    public String home(Model model) {
+        model.addAttribute("bankName", "SmartPay Bank");
+        model.addAttribute("accountHolder", "Sai Kumar");
+        model.addAttribute("balance", "₹1,50,000.75");
+        return "home";
     }
 }
