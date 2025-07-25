@@ -15,7 +15,7 @@ pipeline {
         CONTEXT_PATH = 'test'
         QA_SERVER_URL = 'http://13.222.235.18:8888/'
         DOCKER_USER_NAME= "kadintisai"
-        HOST_PORT = '8888'
+        HOST_PORT = '8889'
     }
     options
     {
