@@ -15,7 +15,7 @@ pipeline {
         CONTEXT_PATH = 'test'
         QA_SERVER_URL = 'http://13.222.235.18:8888/'
         DOCKER_USER_NAME= "kadintisai"
-        HOST_PORT = '8889'
+        HOST_PORT = '8887'
     }
     options
     {
@@ -75,14 +75,14 @@ pipeline {
                 }
             }
         }
-        stage ('Build the docker image')
+        stage ('Build the Docker image')
         {
             steps
             {
                 sh 'docker build -t ${DOCKER_USER_NAME}/${JOB_NAME}:${BUILD_NUMBER} .'
             }
         }
-        stage ("docker login")
+        stage ("Docker login")
         {
             steps
             {
@@ -114,7 +114,7 @@ pipeline {
     {
         always
         {
-            echo "Pipeline succed......!"
+            echo "Pipeline succeeded......!"
             echo "QA access link: http://${QA_SERVER_IP}:8085"
             echo "Prod access link: http://${DEV_SERVER_IP}:${HOST_PORT}"
         }
