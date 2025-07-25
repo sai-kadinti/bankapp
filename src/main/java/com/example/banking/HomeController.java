@@ -8,6 +8,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "✅ Banking App is running!";
+        return "✅ Banking App is running! on 8081";
     }
 }
