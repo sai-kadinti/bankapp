@@ -36,7 +36,7 @@ pipeline {
         {
             steps 
             {
-                sh ''' mvn sonar:sonar \\
+                sh ''' mvn clean verify sonar:sonar \\
                         -Dsonar.host.url=${SONAR_IP} \\
                         -Dsonar.login=${SONAR_TOKEN}'''
             }
