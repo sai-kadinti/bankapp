@@ -1,4 +1,4 @@
 FROM ibmjava:jre
-EXPOSE 9998
-COPY /target/banking-app-0.0.1-SNAPSHOT.jar /opt/app
-CMD ["java", "-jar", "/opt/app/banking-app-0.0.1-SNAPSHOT.jar"]
+RUN mkldir /app
+COPY /target/banking-app-0.0.1-SNAPSHOT.jar /app
+CMD ["java", "-jar", "/app/banking-app-0.0.1-SNAPSHOT.jar"]
